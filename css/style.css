@@ -219,3 +219,122 @@ body{
 }
 
 /* banner section css end */
+
+/* gallery css start */
+.section-title{
+    text-align:center;
+}
+
+.section-title h1{
+    color:#22bedd;
+    font-size:42px;
+    margin:50px 0;
+    border-left: 3px solid #22bedd;
+    border-right: 3px solid #22bedd;
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 0.8;
+
+}
+.gallery{
+    display: flex;
+    justify-content: center;
+    gap:15px;
+    flex-wrap: wrap;
+}
+.photo{
+    height: 280px;
+    width: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+.border{
+    background-color:#fff;
+    position:absolute;
+    transition: 0.7s ease-in-out;
+    
+}
+
+
+.border.top , .border.bottom{
+    height:4px;
+    width:270px;
+}
+
+.border.left , .border.right{
+    height:270px;
+    width:4px;
+}
+
+.border.top {
+    top:5px;
+    /* left:5px; */
+    right:100%;
+}
+
+.border.bottom {
+    bottom:5px;
+    left:100%;
+}
+.border.left {
+    top:100%;
+    left:5px;
+}
+.border.right {
+    right:5px;
+    bottom:100%;
+}
+
+.photo:hover .border.top{
+    right:5px;
+}
+
+.photo:hover .border.bottom {
+    left:5px;
+}
+.photo:hover .border.left {
+    top:5px;
+}
+
+.photo:hover .border.right {
+    bottom:5px;
+}
+
+.photo-content{
+    position:absolute;
+    width:100%;
+    height:100%;
+    bottom:0;
+    left:70px;
+    color:#fff;
+    padding-left: 30px;
+    transform: translateY(400px);
+}
+
+.photo:hover .photo-content{
+    transform: translateY(210px);
+
+}
+
+.photo::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.089);
+}
+
+.photo:hover::before{
+    content: "";
+    opacity: 1;
+}
+
